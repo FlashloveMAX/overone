@@ -1,5 +1,5 @@
-from school.student import Student
-from school.teacher import Teacher
+from school.teacher import *
+from school.student import *
 
 
 class Group:
@@ -49,18 +49,25 @@ class Group:
 
         return False
 
-# s1 = Student("Ivan", "Petrov", 19, 4)
-# s2 = Student("Petr", "Petrov", 19, 4)
-# t1 = Teacher("Alex", "Sidorov", 76, 34)
-# t2 = Teacher("Semen", "Sidorov", 34, 4)
-# 
-# g1 = Group(1, [s1, s2], [t1, t2])
-# print(g1)
-# g1.add_student(Student("Max", "Ivanov", 19, 8.1))
-# g1.remove_student("Petr", "Petrov")
-# for i in g1.students:
-#     print(i)
-# 
-# print(g1.add_teacher(Teacher("Max", "Ivanov", 39, 19)))
-# for i in g1.teachers:
-#     print(i)
+    def count_students(self):
+        return len(self.__students)
+
+    def count_teacher(self):
+        return len(self.__teachers)
+
+s1 = Student("Ivan", "Petrov", 19, 4)
+s2 = Student("Petr", "Petrov", 19, 4)
+t1 = Teacher("Alex", "Sidorov", 76, 34)
+t2 = Teacher("Semen", "Sidorov", 34, 4)
+
+g1 = Group(1, [s1, s2], [t1, t2])
+print(g1)
+g1.add_student(Student("Max", "Ivanov", 19, 8.1))
+g1.remove_student("Petr", "Petrov")
+for i in g1.students:
+    print(i)
+
+print(g1.add_teacher(Teacher("Max", "Ivanov", 39, 19)))
+for i in g1.teachers:
+    print(i)
+print(g1.count_teacher())
