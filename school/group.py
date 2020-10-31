@@ -19,6 +19,10 @@ class Group:
     def teachers(self):
         return self.__teachers
 
+    @property
+    def number(self):
+        return self.__number
+
     def add_student(self, student):
         if type(student) == Student:
             self.__students.append(student)
